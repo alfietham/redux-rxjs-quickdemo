@@ -1,0 +1,13 @@
+import createAction from "../createAction";
+
+export const setSingleImageUrl = createAction("IMAGES/SET_SINGLE_IMAGE_URL");
+
+export const fetchImages = () => dispatch => {
+  dispatch({ type: "IMAGES/FETCH" });
+  return fetch(`https://source.unsplash.com/collection/1154337/480x480`)
+    .then(
+      response => response.url,
+      error => console.error("An error occurred.", error)
+    )
+    .then(imageUrl => dispatch(setSingleImageUrl(imageUrl)));
+};
