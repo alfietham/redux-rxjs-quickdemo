@@ -11,7 +11,6 @@ const NavBar = ({ setActiveTab, activeTab }) => (
       clickAction={() => setActiveTab("solo")}
       isActive={activeTab === "solo"}
     />
-    |
     <NavButton
       text="Multi"
       clickAction={() => setActiveTab("multi")}

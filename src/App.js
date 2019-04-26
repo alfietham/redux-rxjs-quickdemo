@@ -6,7 +6,6 @@ import store from "./store";
 import NavBar from "./components/NavBar";
 
 const Header = styled.header`
-  background-color: #282c34;
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -16,10 +15,17 @@ const Header = styled.header`
   color: white;
 `;
 
+const Body = styled.div`
+  background-color: #282c34;
+  height: 100vh;
+`;
+
 const App = () => (
   <Provider store={store}>
-    <Header>Furry Friends</Header>
-    <NavBar />
+    <Body>
+      <Header>Furry Friends</Header>
+      <NavBar />
+    </Body>
   </Provider>
 );
 
