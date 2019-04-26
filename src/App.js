@@ -4,9 +4,10 @@ import styled from "styled-components";
 
 import store from "./store";
 import NavBar from "./components/NavBar";
+import Gallery from "./components/Gallery";
 
 const Header = styled.header`
-  min-height: 20vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +26,7 @@ const App = () => (
     <Body>
       <Header>Furry Friends</Header>
       <NavBar />
+      <Gallery />
     </Body>
   </Provider>
 );
