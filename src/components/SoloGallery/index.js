@@ -31,12 +31,12 @@ const Button = styled.button`
 
 const SoloGallery = ({ soloImg, fetchNewImage }) => {
   // Initial fetch upon render
-  fetchNewImage();
+  fetchNewImage("480");
 
   return (
     <ImgWrapper>
       <Image src={soloImg} alt="a random cat or dog" />
-      <Button onClick={() => fetchNewImage()}>Random</Button>
+      <Button onClick={() => fetchNewImage("480")}>Random</Button>
     </ImgWrapper>
   );
 };
@@ -46,7 +46,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchNewImage: () => dispatch(fetchImages())
+  fetchNewImage: imgSize => dispatch(fetchImages(imgSize))
 });
 
 export default connect(
