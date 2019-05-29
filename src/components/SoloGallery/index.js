@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import NoDoggo from "../NoDoggo";
+
 const ImgWrapper = styled.div`
   padding: 3vmin;
   display: flex;
@@ -27,16 +29,17 @@ const Button = styled.button`
   }
 `;
 
-const SoloGallery = ({ soloImg, buttonAction, buttonText }) => {
-  // Initial fetch upon render
-  buttonAction();
-
-  return (
-    <ImgWrapper>
-      <Image src={soloImg} alt="a random cat or dog" />
-      <Button onClick={() => buttonAction()}>{buttonText}</Button>
-    </ImgWrapper>
-  );
-};
+const SoloGallery = ({ soloImg, buttonAction, buttonText }) => (
+  <>
+    {soloImg === "" ? (
+      <NoDoggo />
+    ) : (
+      <ImgWrapper>
+        <Image src={soloImg} alt="a random cat or dog" />
+      </ImgWrapper>
+    )}
+    <Button onClick={() => buttonAction()}>{buttonText}</Button>
+  </>
+);
 
 export default SoloGallery;

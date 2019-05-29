@@ -11,12 +11,12 @@ const ButtonContainer = styled.div`
 const NavBar = ({ setActiveTab, activeTab }) => (
   <ButtonContainer>
     <NavButton
-      text="Solo Doggo"
+      text="One Doggo"
       clickAction={() => setActiveTab("solo")}
       isActive={activeTab === "solo"}
     />
     <NavButton
-      text="Multi Doggo"
+      text="Many Doggos"
       clickAction={() => setActiveTab("multi")}
       isActive={activeTab === "multi"}
     />

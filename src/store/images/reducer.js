@@ -5,7 +5,7 @@ import {
 } from "./action";
 
 const initialState = {
-  soloImg: "/cat00003.jpg",
+  soloImg: "",
   multiImg: []
 };
 

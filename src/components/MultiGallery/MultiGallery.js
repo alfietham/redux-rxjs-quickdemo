@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import NoDoggo from "../NoDoggo";
+
 const ImgWrapper = styled.div`
   display: grid;
   margin: 5vh 10vw;
@@ -27,22 +29,10 @@ const Button = styled.button`
   }
 `;
 
-const InfoText = styled.div`
-  font-size: calc(10px + 1.2vmin);
-  color: white;
-  line-height: 3em;
-  margin: 2vh 20vw;
-`;
-
 const MultiGallery = ({ multiImg, fetchNewImagesMulti }) => (
   <>
     {multiImg && multiImg.length === 0 ? (
-      <>
-        <InfoText>
-          You haven't fetched any images yet
-          <Image src={"/cat00003.jpg"} alt="a random cat or dog" />
-        </InfoText>
-      </>
+      <NoDoggo />
     ) : (
       <ImgWrapper>
         {multiImg.map((img, index) => (
