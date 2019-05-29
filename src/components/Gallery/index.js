@@ -1,11 +1,17 @@
-import React from "react";
+import { connect } from "react-redux";
+import { fetchImages } from "../../store/images/action";
 
-import SoloGallery from "../SoloGallery";
+import Gallery from "./Gallery";
 
-const Gallery = () => (
-  <div>
-    <SoloGallery />
-  </div>
-);
+const mapStateToProps = state => ({
+  soloImg: state.images.soloImg
+});
 
-export default Gallery;
+const mapDispatchToProps = dispatch => ({
+  fetchNewImage: imgSize => dispatch(fetchImages(imgSize))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Gallery);

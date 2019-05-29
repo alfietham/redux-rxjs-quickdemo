@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { fetchImages } from "../../store/images/action";
 
 const ImgWrapper = styled.div`
   padding: 3vmin;
@@ -41,15 +39,4 @@ const SoloGallery = ({ soloImg, fetchNewImage }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  soloImg: state.images.soloImg
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchNewImage: imgSize => dispatch(fetchImages(imgSize))
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SoloGallery);
+export default SoloGallery;
