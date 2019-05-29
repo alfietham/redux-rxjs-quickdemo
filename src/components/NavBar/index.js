@@ -1,23 +1,7 @@
-import React from "react";
 import { connect } from "react-redux";
 
 import { setActiveTab } from "../../store/nav/action";
-import NavButton from "./parts/NavButton";
-
-const NavBar = ({ setActiveTab, activeTab }) => (
-  <div>
-    <NavButton
-      text="Solo"
-      clickAction={() => setActiveTab("solo")}
-      isActive={activeTab === "solo"}
-    />
-    <NavButton
-      text="Multi"
-      clickAction={() => setActiveTab("multi")}
-      isActive={activeTab === "multi"}
-    />
-  </div>
-);
+import NavBar from "./NavBar";
 
 const mapStateToProps = state => ({
   activeTab: state.navigation.activeTab
