@@ -27,14 +27,14 @@ const Button = styled.button`
   }
 `;
 
-const SoloGallery = ({ soloImg, fetchNewImage }) => {
+const SoloGallery = ({ soloImg, buttonAction, buttonText }) => {
   // Initial fetch upon render
-  fetchNewImage("480");
+  buttonAction();
 
   return (
     <ImgWrapper>
       <Image src={soloImg} alt="a random cat or dog" />
-      <Button onClick={() => fetchNewImage("480")}>Random</Button>
+      <Button onClick={() => buttonAction()}>{buttonText}</Button>
     </ImgWrapper>
   );
 };

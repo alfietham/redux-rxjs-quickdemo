@@ -12,7 +12,11 @@ const Gallery = ({
 }) => (
   <div>
     {activeTab === "solo" && (
-      <SoloGallery soloImg={soloImg} fetchNewImage={fetchNewImage} />
+      <SoloGallery
+        soloImg={soloImg}
+        buttonAction={() => fetchNewImage("480")}
+        buttonText="Random"
+      />
     )}
     {activeTab === "multi" && (
       <MultiGallery

@@ -12,7 +12,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe("Gallery component", () => {
   const dummyProps = {
     soloImg: "",
-    fetchNewImage: () => {},
+    buttonAction: () => {},
     multiImg: [""],
     fetchNewImagesMulti: () => {}
   };
