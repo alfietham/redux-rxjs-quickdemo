@@ -19,6 +19,7 @@ const Header = styled.header`
 const Body = styled.div`
   background-color: #282c34;
   height: 100vh;
+  overflow: auto;
 `;
 
 const App = () => (

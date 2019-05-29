@@ -3,3 +3,6 @@
 Starter code for a quick demo of Redux-RxJS
 
 ## Setup & Install
+
+`npm install`
+`npm start`

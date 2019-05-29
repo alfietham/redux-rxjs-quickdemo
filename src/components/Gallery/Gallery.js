@@ -1,10 +1,25 @@
 import React from "react";
 
 import SoloGallery from "../SoloGallery";
+import MultiGallery from "../MultiGallery";
 
-const Gallery = ({ soloImg, fetchNewImage }) => (
+const Gallery = ({
+  activeTab,
+  soloImg,
+  fetchNewImage,
+  multiImg,
+  fetchNewImagesMulti
+}) => (
   <div>
-    <SoloGallery soloImg={soloImg} fetchNewImage={fetchNewImage} />
+    {activeTab === "solo" && (
+      <SoloGallery soloImg={soloImg} fetchNewImage={fetchNewImage} />
+    )}
+    {activeTab === "multi" && (
+      <MultiGallery
+        multiImg={multiImg}
+        fetchNewImagesMulti={fetchNewImagesMulti}
+      />
+    )}
   </div>
 );
 

@@ -1,6 +1,13 @@
-import { setSingleImageUrl } from "./action";
+import {
+  setSingleImageUrl,
+  setMultiImageUrl,
+  clearMultiImgUrl
+} from "./action";
 
-const initialState = { soloImg: "/cat00003.jpg" };
+const initialState = {
+  soloImg: "/cat00003.jpg",
+  multiImg: []
+};
 
 const imagesReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,6 +15,16 @@ const imagesReducer = (state = initialState, action) => {
       return {
         ...state,
         soloImg: action.payload
+      };
+    case setMultiImageUrl().type:
+      return {
+        ...state,
+        multiImg: action.payload
+      };
+    case clearMultiImgUrl().type:
+      return {
+        ...state,
+        multiImg: []
       };
     default:
       return state;
