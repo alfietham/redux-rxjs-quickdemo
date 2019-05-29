@@ -24,6 +24,15 @@ const Gallery = ({
         fetchNewImagesMulti={fetchNewImagesMulti}
       />
     )}
+    {activeTab === "loop" && (
+      <SoloGallery
+        soloImg={soloImg}
+        buttonAction={() =>
+          console.log("Woof! You haven't implemented this yet!")
+        }
+        buttonText="Turn up the Loop"
+      />
+    )}
   </div>
 );
 

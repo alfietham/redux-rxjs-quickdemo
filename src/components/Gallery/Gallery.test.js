@@ -12,7 +12,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe("Gallery component", () => {
   const dummyProps = {
     soloImg: "",
-    buttonAction: () => {},
+    fetchNewImage: () => {},
     multiImg: [""],
     fetchNewImagesMulti: () => {}
   };
@@ -36,6 +36,17 @@ describe("Gallery component", () => {
     });
     it("should NOT render the Solo Gallery", () => {
       expect(mountedGalleryMulti.find(SoloGallery).exists()).toBeFalsy();
+    });
+  });
+  describe("When activeTab is loop", () => {
+    const mountedGalleryMulti = mount(
+      <Gallery activeTab="loop" {...dummyProps} />
+    );
+    it("should render the SoloGallery", () => {
+      expect(mountedGalleryMulti.find(SoloGallery).exists()).toBeTruthy();
+    });
+    it("should NOT render the Multi Gallery", () => {
+      expect(mountedGalleryMulti.find(MultiGallery).exists()).toBeFalsy();
     });
   });
 });

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const NavButton = styled.button`
-  width: 50vw;
+  width: 100%;
   height: 3em;
   font-size: calc(8px + 2vmin);
   background-color: ${props => (props.isActive ? "#888" : "#ccc")};

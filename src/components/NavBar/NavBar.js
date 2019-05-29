@@ -1,9 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 
 import NavButton from "./NavButton";
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
 const NavBar = ({ setActiveTab, activeTab }) => (
-  <div>
+  <ButtonContainer>
     <NavButton
       text="Solo Doggo"
       clickAction={() => setActiveTab("solo")}
@@ -19,7 +25,7 @@ const NavBar = ({ setActiveTab, activeTab }) => (
       clickAction={() => setActiveTab("loop")}
       isActive={activeTab === "loop"}
     />
-  </div>
+  </ButtonContainer>
 );
 
 export default NavBar;
