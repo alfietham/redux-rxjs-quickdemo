@@ -7,10 +7,11 @@ const Image = styled.img`
 `;
 
 const InfoText = styled.div`
+  width: 40vw;
   font-size: calc(10px + 1.2vmin);
   color: white;
   line-height: 3em;
-  margin: 2vh 20vw;
+  margin: 2vh auto;
 `;
 
 const NoDoggo = () => (
