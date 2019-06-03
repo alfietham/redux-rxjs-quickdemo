@@ -14,17 +14,9 @@ const composeEnhancers =
       })
     : compose;
 
-// Thunk middleware
-const thunk = store => next => action =>
-  typeof action === "function"
-    ? action(store.dispatch, store.getState)
-    : next(action);
-
-const middleware = [epicMiddleware, thunk].filter(item => item !== null);
-
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(...middleware))
+  composeEnhancers(applyMiddleware(epicMiddleware))
 );
 
 epicMiddleware.run(rootEpic);
