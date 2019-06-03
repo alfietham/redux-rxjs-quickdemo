@@ -1,5 +1,10 @@
 import { connect } from "react-redux";
-import { fetchImages, fetchMultiImages } from "../../store/images/action";
+import {
+  fetchImages,
+  fetchMultiImages,
+  startTimer,
+  stopTimer
+} from "../../store/images/action";
 
 import Gallery from "./Gallery";
 
@@ -11,7 +16,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchNewImage: imgSize => dispatch(fetchImages(imgSize)),
-  fetchNewImagesMulti: numImages => dispatch(fetchMultiImages(numImages))
+  fetchNewImagesMulti: numImages => dispatch(fetchMultiImages(numImages)),
+  startTimer: interval => dispatch(startTimer(interval)),
+  stopTimer: () => dispatch(stopTimer())
 });
 
 export default connect(

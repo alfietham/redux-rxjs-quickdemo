@@ -2,13 +2,16 @@ import React from "react";
 
 import SoloGallery from "../SoloGallery";
 import MultiGallery from "../MultiGallery";
+import LoopGallery from "../LoopGallery";
 
 const Gallery = ({
   activeTab,
   soloImg,
   fetchNewImage,
   multiImg,
-  fetchNewImagesMulti
+  fetchNewImagesMulti,
+  startTimer,
+  stopTimer
 }) => (
   <div>
     {activeTab === "solo" && (
@@ -25,12 +28,12 @@ const Gallery = ({
       />
     )}
     {activeTab === "loop" && (
-      <SoloGallery
+      <LoopGallery
         soloImg={soloImg}
-        buttonAction={() =>
-          console.log("Woof! You haven't implemented this yet!")
-        }
-        buttonText="Turn up the Loop"
+        mainButtonAction={interval => startTimer(interval)}
+        mainButtonText="Start"
+        secButtonAction={() => stopTimer()}
+        secButtonText="Stop"
       />
     )}
   </div>

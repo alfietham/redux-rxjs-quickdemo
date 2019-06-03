@@ -6,6 +6,7 @@ import Gallery from "./Gallery";
 
 import SoloGallery from "../SoloGallery";
 import MultiGallery from "../MultiGallery";
+import LoopGallery from "../LoopGallery";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -42,8 +43,8 @@ describe("Gallery component", () => {
     const mountedGalleryMulti = mount(
       <Gallery activeTab="loop" {...dummyProps} />
     );
-    it("should render the SoloGallery", () => {
-      expect(mountedGalleryMulti.find(SoloGallery).exists()).toBeTruthy();
+    it("should render the LoopGallery", () => {
+      expect(mountedGalleryMulti.find(LoopGallery).exists()).toBeTruthy();
     });
     it("should NOT render the Multi Gallery", () => {
       expect(mountedGalleryMulti.find(MultiGallery).exists()).toBeFalsy();
